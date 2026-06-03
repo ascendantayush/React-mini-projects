@@ -1,0 +1,18 @@
+.lower-button {
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lower-button img {
+  width: 25px;
+  height: 25px;
+
+  object-fit: contain;
+}

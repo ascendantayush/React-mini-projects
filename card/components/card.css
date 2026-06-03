@@ -1,0 +1,11 @@
+.container {
+  width: 300px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: beige;
+}
+
+.container img {
+  width: 100%;
+}
