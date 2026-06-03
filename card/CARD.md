@@ -51,7 +51,7 @@ src/
 
 **Clone the repository**
 ```bash
-git clone <your-repo-link>
+git clone https://github.com/ascendantayush/React-mini-projects/
 ```
 
 **Move into the project folder**
