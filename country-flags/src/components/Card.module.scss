@@ -1,0 +1,31 @@
+@use "../styles/globals" as *;
+
+.cardContainer {
+  margin: 10px 20px;
+  height: 350px;
+  width: 300px;
+  overflow: hidden;
+  background-color: $secondary-color;
+  border-radius: 18px;
+
+  .cardImage {
+    height: 50%;
+    width: 100%;
+  }
+
+  .information {
+    margin-left: 15px;
+
+    .countryName {
+      padding: 5px;
+      color: white;
+    }
+
+    .countryStats {
+      .countryDetail {
+        color: white;
+        margin: 10px 0px;
+      }
+    }
+  }
+}

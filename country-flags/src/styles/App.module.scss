@@ -9,4 +9,12 @@
     height: 100px;
     width: 100%;
   }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+  }
 }
