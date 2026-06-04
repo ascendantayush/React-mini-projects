@@ -16,30 +16,41 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
-
   return (
     <div className={style["main-container"]}>
-      <Header />
+      <div className={style["header-container"]}>
+        <Header />
+      </div>
       <div className={style["inner-container"]}>
         <SearchBar />
         <Dropdown />
       </div>
       <div className={style["content"]}>
-        {
-          //  { flag, name, population, region, capital }
-          countries.map((data) => {
-            return (
-              <Card
-                key={key++}
-                flag={data.flags.svg}
-                name={data.name.common}
-                population={data.population}
-                region={data.region}
-                capital={data.capital?.[0]}
-              ></Card>
-            );
-          })
-        }
+        {/* {countries.map((data) => {
+          return (
+            <Card
+              key={key++}
+              flag={data.flags.svg}
+              name={data.name.common}
+              population={data.population}
+              region={data.region}
+              capital={data.capital?.[0]}
+            />
+          );
+        })} */}
+
+        {countries.map((data) => {
+          return (
+            <Card
+              key={key++}
+              name={data.name.common}
+              flag={data.flags.svg}
+              population={data.population}
+              region={data.region}
+              capital={data.capital?.[0]}
+            />
+          );
+        })}
       </div>
     </div>
   );
