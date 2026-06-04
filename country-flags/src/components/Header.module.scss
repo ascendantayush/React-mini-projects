@@ -1,0 +1,42 @@
+@use "../styles/globals" as *;
+
+.header {
+  background-color: $secondary-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: white;
+
+  .headerTitle {
+    padding-left: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 5px;
+    margin-bottom: 7px;
+  }
+
+  .headerBtn {
+    background-color: $secondary-color;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+    margin-top: 5px;
+    margin-bottom: 7px;
+
+    .headerIcon {
+      height: 50px;
+      width: 50px;
+      filter: brightness(0) invert(1);
+    }
+
+    .headerText {
+      font-size: larger;
+      font-weight: bolder;
+      color: white;
+    }
+  }
+}
