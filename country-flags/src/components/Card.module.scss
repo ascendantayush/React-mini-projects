@@ -11,6 +11,8 @@
   .cardImage {
     height: 50%;
     width: 100%;
+    object-fit: cover; // fills the space, crops if needed
+    object-position: center;
   }
 
   .information {
