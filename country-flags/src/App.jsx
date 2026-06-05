@@ -9,9 +9,14 @@ let key = 0;
 const App = () => {
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
+  const [region, setRegion] = useState("");
 
   const searchFunc = (e) => {
     setSearch(e.target.value.toLowerCase());
+  };
+
+  const regionFunc = (e) => {
+    setRegion(e.target.value.toLowerCase());
   };
 
   useEffect(() => {
@@ -23,7 +28,21 @@ const App = () => {
   }, []);
 
   const result = countries.filter((data) => {
-    return data.name?.common?.toLowerCase().includes(search);
+    let name_search;
+    if (search === "") {
+      name_search = true;
+    } else {
+      name_search = data.name?.common?.toLowerCase().includes(search);
+    }
+
+    let region_match;
+    if (region === "") {
+      region_match = true;
+    } else {
+      region_match = data.region?.toLowerCase().includes(region);
+    }
+
+    return name_search && region_match;
   });
 
   return (
@@ -33,13 +52,13 @@ const App = () => {
       </div>
       <div className={style["inner-container"]}>
         <SearchBar search={search} searchFunc={searchFunc} />
-        <Dropdown />
+        <Dropdown region={region} regionFunc={regionFunc} />
       </div>
       <div className={style["content"]}>
         {result.map((data) => {
           return (
             <Card
-              key={key++}
+              key={data.name.official}
               name={data.name.common}
               flag={data.flags.svg}
               population={data.population}

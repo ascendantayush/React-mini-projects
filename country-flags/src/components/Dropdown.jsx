@@ -1,10 +1,10 @@
 import React from "react";
 import style from "./Dropdown.module.scss";
 
-const Dropdown = () => {
+const Dropdown = ({ region, regionFunc }) => {
   return (
     <div className={style.dropdownContainer}>
-      <select className={style.dropdown}>
+      <select className={style.dropdown} value={region} onChange={regionFunc}>
         <option className={style.droppedItem} value="">
           Filter by Region
         </option>
