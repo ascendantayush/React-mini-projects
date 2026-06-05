@@ -8,6 +8,11 @@ import Card from "./components/Card.jsx";
 let key = 0;
 const App = () => {
   const [countries, setCountries] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const searchFunc = (e) => {
+    setSearch(e.target.value.toLowerCase());
+  };
 
   useEffect(() => {
     fetch(
@@ -16,30 +21,22 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
+
+  const result = countries.filter((data) => {
+    return data.name?.common?.toLowerCase().includes(search);
+  });
+
   return (
     <div className={style["main-container"]}>
       <div className={style["header-container"]}>
         <Header />
       </div>
       <div className={style["inner-container"]}>
-        <SearchBar />
+        <SearchBar search={search} searchFunc={searchFunc} />
         <Dropdown />
       </div>
       <div className={style["content"]}>
-        {/* {countries.map((data) => {
-          return (
-            <Card
-              key={key++}
-              flag={data.flags.svg}
-              name={data.name.common}
-              population={data.population}
-              region={data.region}
-              capital={data.capital?.[0]}
-            />
-          );
-        })} */}
-
-        {countries.map((data) => {
+        {result.map((data) => {
           return (
             <Card
               key={key++}
