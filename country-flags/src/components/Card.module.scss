@@ -1,32 +1,37 @@
 @use "../styles/globals" as *;
 
-.cardContainer {
-  margin: 10px 20px;
-  height: 350px;
-  width: 300px;
-  overflow: hidden;
-  background-color: $secondary-color;
-  border-radius: 18px;
+.cardLink {
+  text-decoration: none;
+  color: inherit;
 
-  .cardImage {
-    height: 50%;
-    width: 100%;
-    object-fit: cover; // fills the space, crops if needed
-    object-position: center;
-  }
+  .cardContainer {
+    margin: 10px 20px;
+    height: 350px;
+    width: 300px;
+    overflow: hidden;
+    background-color: $secondary-color;
+    border-radius: 18px;
 
-  .information {
-    margin-left: 15px;
-
-    .countryName {
-      padding: 5px;
-      color: white;
+    .cardImage {
+      height: 50%;
+      width: 100%;
+      object-fit: cover; // fills the space, crops if needed
+      object-position: center;
     }
 
-    .countryStats {
-      .countryDetail {
+    .information {
+      margin-left: 15px;
+
+      .countryName {
+        padding: 5px;
         color: white;
-        margin: 10px 0px;
+      }
+
+      .countryStats {
+        .countryDetail {
+          color: white;
+          margin: 10px 0px;
+        }
       }
     }
   }
