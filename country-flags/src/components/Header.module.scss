@@ -1,5 +1,9 @@
 @use "../styles/globals" as *;
 
+.LinkHeader {
+  text-decoration: none;
+  color: inherit;
+}
 .header {
   background-color: $secondary-color;
   display: flex;
